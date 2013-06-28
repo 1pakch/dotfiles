@@ -1,0 +1,31 @@
+autocmd BufReadPre,BufReadPost SCons* set filetype=python
+autocmd BufReadPre,BufReadPost SCons* set syntax=python
+
+"set cwd when swtiching tabs
+set autochdir
+
+"autocmd FileType c set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
+"autocmd FileType cpp set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
+autocmd FileType tex set softtabstop=2 shiftwidth=2 textwidth=90 expandtab
+autocmd FileType python set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
+
+function! s:insert_gates()
+  let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+  execute "normal! i#ifndef " . gatename
+  execute "normal! o#define " . gatename . " "
+  execute "normal! Go#endif /* " . gatename . " */"
+  normal! kk
+endfunction
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
+" Pathogen
+source ~/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
+execute pathogen#infect('~/dotfiles/vim/bundle/{}')
+
+" Solarized colorscheme
+filetype off
+let g:solarized_contrast="high"
+let g:solarized_visibility="normal"
+set background=dark
+colorscheme solarized
+filetype plugin indent on

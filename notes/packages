@@ -1,0 +1,10 @@
+python-dev
+libboost1.53-all-dev
+libatlas-dev libblas-dev libeigen3-dev
+python-numpy python-scipy python-matplotlib python-pandas ipython
+scons
+
+ndaray:
+requires m4, zlib-dev
+sudo ln -s /usr/lib/x86_64-linux-gnu/libpython2.7.a /usr/lib/libpython2.7.a
+sudo ln -s /usr/lib/x86_64-linux-gnu/libpython2.7.so /usr/lib/libpython2.7.so

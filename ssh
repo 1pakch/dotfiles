@@ -1,0 +1,9 @@
+to allow (incoming) authorizations 
+copy the public key to the server
+using ssh-copy-id
+
+/etc/ssh/sshd_config
+PasswordAuthentication no
+LogLevel INFO
+
+

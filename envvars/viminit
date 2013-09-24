@@ -1,0 +1,2 @@
+#VIMINIT is a Vim command that is executed, not a vimrc location
+export VIMINIT="source $HOME/dotfiles/vim/vimrc"

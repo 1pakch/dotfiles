@@ -1,0 +1,7 @@
+FONTS:
+unity-tweak-tool
+monospace: droid sans mono 11 (package fonts-droid)
+hinting slight
+
+appearance>settings>launcher icon size 32
+tweak-tool>launcher>icons>icon backgrounds = colored edges

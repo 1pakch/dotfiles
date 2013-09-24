@@ -1,0 +1,4 @@
+empirics:
+    psycopg2
+    quantlib (expdates)
+    treedict (config)

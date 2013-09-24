@@ -1,0 +1,23 @@
+build*
+
+# SCons
+.sconsign.dblite
+
+# pyc
+*.pyc
+
+# vim
+.*.swp
+
+# GCC
+*.gch # precompiled headers
+*.o
+*.out
+
+# EXE
+*.exe
+
+# Libraries
+*.a
+*.so
+*.os

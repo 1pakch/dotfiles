@@ -1,0 +1,1 @@
+export INCLUDE_PATH=$INCLUDE_PATH:$HOME/local/include

@@ -1,0 +1,9 @@
+[user]
+	name = Ilya Kolpakov
+	email = ilya.kolpakov@gmail.com
+[color]
+	ui = true
+[core]
+	excludesfile = ~/configs/git/ignore
+[push]
+	default = current

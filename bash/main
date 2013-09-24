@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-source $HOME/configs/bash/aliases
+source $HOME/dotfiles/bash/aliases
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -82,5 +82,6 @@ fi
 
 export HOMEPYSITE=`python -m site --user-site`
 
-#$HOME/configs/solarized/gnome-terminal-colors-solarized/solarize
-#eval `dircolors $HOME/dotfiles/solarized/dircolors-solarized/dircolors.ansi-dark`
+#$HOME/dotfiles/solarized/gnome-terminal/solarize
+#$HOME/dotfiles/solarized/gnome-terminal/set_dark.sh
+eval `dircolors $HOME/dotfiles/solarized/dircolors/dircolors.ansi-dark`

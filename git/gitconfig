@@ -4,6 +4,6 @@
 [color]
 	ui = true
 [core]
-	excludesfile = ~/configs/git/ignore
+	excludesfile = ~/dotfiles/git/ignore
 [push]
 	default = current

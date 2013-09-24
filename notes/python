@@ -2,3 +2,6 @@ empirics:
     psycopg2
     quantlib (expdates)
     treedict (config)
+    python-sql (newcrackdb/crackdatalib)
+    unipath
+    lmfit

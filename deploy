@@ -1,0 +1,4 @@
+#!/bin/bash
+ln -s ~/dotfiles/homeroot/bashrc ~/.bashrc
+ln -s ~/dotfiles/homeroot/profile ~/.profile
+cp ~/dotfiles/homeroot/gitconfig ~/.gitconfig

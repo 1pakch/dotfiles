@@ -4,10 +4,14 @@ autocmd BufReadPre,BufReadPost SCons* set syntax=python
 "set cwd when swtiching tabs
 set autochdir
 
+"Path fix
+set runtimepath+=/usr/share/vim/addons/
+
 "autocmd FileType c set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 "autocmd FileType cpp set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 autocmd FileType tex set softtabstop=2 shiftwidth=2 textwidth=90 expandtab
 autocmd FileType python set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
+autocmd FileType c set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 
 function! s:insert_gates()
   let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")

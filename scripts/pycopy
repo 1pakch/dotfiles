@@ -1,0 +1,5 @@
+#!/bin/bash
+PYUSERSITE=$HOME/.local/lib/python2.7/site-packages/
+rm -rf $PYUSERSITE/$1/.git
+cp -r $1 $PYUSERSITE
+rm -rf $PYUSERSITE/$1/.git

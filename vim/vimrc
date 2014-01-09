@@ -33,3 +33,12 @@ let g:solarized_visibility="normal"
 set background=dark
 colorscheme solarized
 filetype plugin indent on
+
+" Define shortcut <F3> for compiling LaTeX files
+function Map_compile_scons()
+  map <F3> :wall<CR>:!scons<CR>
+  imap <F3> <ESC>:wall<CR>:!scons<CR>
+endfunction
+
+autocmd BufRead *.tex call Map_compile_scons() 
+

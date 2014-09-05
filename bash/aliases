@@ -1,3 +1,4 @@
+#!/bin/bash
 # Alias definitions.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
@@ -22,7 +23,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias gvim=gvim 2>/dev/null &
+call_gvim(){ gvim "$@" 2>/dev/null; }
+alias gvim=call_gvim
 
 alias apti='sudo aptitude install'
 alias apts='aptitude search'
@@ -34,5 +36,4 @@ alias pips='pip search'
 
 alias pylab='ipython --pylab'
 alias mipy='ipython --pylab --profile mipy'
-
 

@@ -1,4 +1,5 @@
 #!/bin/bash
-ln -s ~/dotfiles/homeroot/bashrc ~/.bashrc
-ln -s ~/dotfiles/homeroot/profile ~/.profile
+ln --force -s ~/dotfiles/homeroot/bashrc ~/.bashrc
+ln --force -s ~/dotfiles/homeroot/profile ~/.profile
 cp ~/dotfiles/homeroot/gitconfig ~/.gitconfig
+./solaralize/gnome-terminal/install.sh

@@ -1,1 +1,1 @@
-export INCLUDE_PATH=$INCLUDE_PATH:$HOME/local/include
+export INCLUDE_PATH=$INCLUDE_PATH:$HOME/local/include:$HOME/.local/include

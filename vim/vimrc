@@ -32,7 +32,7 @@ execute pathogen#infect('~/dotfiles/vim/bundle/{}')
 filetype off
 let g:solarized_contrast="high"
 let g:solarized_visibility="normal"
-set background=dark
+set background=light
 colorscheme solarized
 filetype plugin indent on
 

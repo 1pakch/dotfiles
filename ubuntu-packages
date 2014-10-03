@@ -1,0 +1,31 @@
+#!/bin/bash
+
+sudo aptitude install g++ libboost-all-dev
+sudo aptitude install doxygen
+sudo aptitude install libzmq3-dev libmysqlcppconn-dev
+sudo aptitude install liblapack-dev libhdf5-dev libhdf5-doc
+
+sudo mkdir /oleum
+sudo addgroup oleum
+sudo usermod -a -G oleum ilya
+sudo chgrp oleum /oleum
+sudo chmod g+rwx /oleum
+
+sudo aptitude install chromium-browser
+sudo aptitude install vim-gnome
+
+sudo aptitude install python-scipy python-matplotlib
+sudo aptitude install python-h5py python-tables
+sudo aptitude install ipython ipython-notebook
+sudo aptitude install python-scikits.statsmodels python-scikits-learn
+sudo aptitude install python-h5py python-tables hdf5-tools
+sudo aptitude install python-pip
+
+sudo aptitude install r-base
+
+sudo aptitude install unity-tweak-tool
+
+sudo aptitude install texlive-latex texlive-latex-extra
+
+
+pip install --user python-sql pss pandas

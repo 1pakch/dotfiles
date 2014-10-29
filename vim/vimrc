@@ -5,7 +5,42 @@ autocmd BufReadPre,BufReadPost SCons* set syntax=python
 set autochdir
 
 "Path fix
+set nocompatible
 set runtimepath+=/usr/share/vim/addons/
+
+" <Leader> := <Space Key>
+let mapleader=" "
+nnoremap <SPACE> <Nop>
+
+" Install Vundle if not installed
+let iCanHazVundle=1  
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+echo "Installing Vundle.."
+echo ""
+silent !mkdir -p ~/.vim/bundle
+silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+let iCanHazVundle=0
+endif
+
+" Use Vundle
+filetype off
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#begin()
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'bling/vim-airline'
+Plugin 'Shougo/unite.vim'
+Plugin 'ervandew/supertab'
+Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+call vundle#end()
+
+" Enable vim-airline
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
 
 "autocmd FileType c set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 "autocmd FileType cpp set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
@@ -24,12 +59,7 @@ function! s:insert_gates()
 endfunction
 autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 
-" Pathogen
-source ~/dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect('~/dotfiles/vim/bundle/{}')
-
 " Solarized colorscheme
-filetype off
 let g:solarized_contrast="high"
 let g:solarized_visibility="normal"
 set background=light

@@ -12,7 +12,8 @@ set runtimepath+=/usr/share/vim/addons/
 let mapleader=" "
 nnoremap <SPACE> <Nop>
 
-" Install Vundle if not installed
+" Install Vundle if not installed and gVim
+if has("gui_running")
 let iCanHazVundle=1  
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
@@ -21,6 +22,7 @@ echo ""
 silent !mkdir -p ~/.vim/bundle
 silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
 let iCanHazVundle=0
+endif
 endif
 
 " Use Vundle
@@ -32,9 +34,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/unite.vim'
-Plugin 'ervandew/supertab'
+Plugin 'ivanov/vim-ipython'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 call vundle#end()
 
@@ -66,6 +69,7 @@ set background=light
 colorscheme solarized
 filetype plugin indent on
 
+" Run scons from a parent directory which has SConstruct
 function g:Run_scons ()
   let oldpwd = getcwd()
   echo oldpwd
@@ -76,11 +80,12 @@ function g:Run_scons ()
   lcd `=oldpwd`
 endfunction
 
-" Define shortcut <F3> for compiling LaTeX files
+" Define shortcut <F3> for compiling
 function g:Map_compile_scons ()
   map <F3> :wall<CR>:call g:Run_scons()<CR>
   imap <F3> <ESC>:wall<CR>:call g:Run_scons()<CR>
 endfunction
 
 autocmd BufRead *.tex call g:Map_compile_scons() 
+autocmd BufRead *.cpp call g:Map_compile_scons() 
 

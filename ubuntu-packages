@@ -4,6 +4,7 @@ sudo aptitude install g++ libboost-all-dev
 sudo aptitude install doxygen
 sudo aptitude install libzmq3-dev libmysqlcppconn-dev
 sudo aptitude install liblapack-dev libhdf5-dev libhdf5-doc
+sudo aptitude install cmake
 
 sudo mkdir /oleum
 sudo addgroup oleum
@@ -27,5 +28,8 @@ sudo aptitude install unity-tweak-tool
 
 sudo aptitude install texlive-latex texlive-latex-extra
 
+sudo aptitude install tmux
 
-pip install --user python-sql pss pandas
+pip install --user pss python-sql pss unipath
+pip install --user pandas scikit-learn statsmodels patsy
+

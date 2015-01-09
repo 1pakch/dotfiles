@@ -1,5 +1,8 @@
 # Build subdirectories
-build*
+build/*
+
+# Python egg files produced by setuptools
+*.egg*/
 
 # Compiled source #
 *.a

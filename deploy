@@ -1,5 +1,6 @@
 #!/bin/bash
 ln --force -s ~/dotfiles/homeroot/bashrc ~/.bashrc
 ln --force -s ~/dotfiles/homeroot/profile ~/.profile
+ln --force -s ~/dotfiles/tmux.conf ~/.tmux
 cp ~/dotfiles/homeroot/gitconfig ~/.gitconfig
-./solaralize/gnome-terminal/install.sh
+./solarized/gnome-terminal/install.sh

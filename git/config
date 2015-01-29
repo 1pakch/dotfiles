@@ -3,3 +3,5 @@
 [user]
 	email = ilya.kolpakov@gmail.com
 	name = Ilya Kolpakov
+[core]
+	excludesfile = /home/ilya/dotfiles/git/ignore

@@ -2,5 +2,5 @@
 ln --force -s ~/dotfiles/homeroot/bashrc ~/.bashrc
 ln --force -s ~/dotfiles/homeroot/profile ~/.profile
 ln --force -s ~/dotfiles/homeroot/tmux ~/.tmux
-cp ~/dotfiles/homeroot/gitconfig ~/.gitconfig
+ln --force -s ~/dotfiles/git/config ~/.gitconfig
 ./solarized/gnome-terminal/install.sh

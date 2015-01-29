@@ -68,6 +68,14 @@ let g:solarized_visibility="normal"
 set background=light
 colorscheme solarized
 filetype plugin indent on
+if has('gui_running')
+  " do something
+else
+  " in terminal mode
+  set t_Co=16
+  let g:solarized_termcolors=16
+endif
+
 
 " Run scons from a parent directory which has SConstruct
 function g:Run_scons ()

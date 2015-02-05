@@ -91,3 +91,12 @@ export HOMEPYSITE=`python -m site --user-site`
 #$HOME/dotfiles/solarized/gnome-terminal/solarize
 #$HOME/dotfiles/solarized/gnome-terminal/set_dark.sh
 eval `dircolors $HOME/dotfiles/solarized/dircolors/dircolors.ansi-dark`
+
+
+if [[ $- == *i* ]]
+then
+    # do_interactive_stuff
+    #
+    # disable Ctrl-D
+    set -o ignoreeof
+fi

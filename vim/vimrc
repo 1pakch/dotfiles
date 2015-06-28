@@ -40,6 +40,8 @@ Plugin 'Shougo/unite.vim'
 Plugin 'ivanov/vim-ipython'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 
 " Enable vim-airline
@@ -52,6 +54,7 @@ autocmd FileType tex set softtabstop=2 shiftwidth=2 textwidth=90 expandtab
 autocmd FileType python set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 autocmd FileType c set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 autocmd FileType cpp set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType markdown set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 
 function! s:insert_gates()

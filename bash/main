@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+# force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # display maximum 2 inmost directories in the prompt
-PROMPT_DIRTRIM=2
+PROMPT_DIRTRIM=1
 
 COLORED_PS1='${debian_chroot:+($debian_chroot)}\u@\[\033[1m\]\h\[\033[0m\]:\w$ '
 PLAIN_PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '

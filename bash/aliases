@@ -37,4 +37,3 @@ alias pips='pip search'
 alias pylab='ipython --pylab'
 alias mipy='ipython --pylab --profile mipy'
 
-alias tmux='tmux -f ~/dotfiles/tmux.conf'

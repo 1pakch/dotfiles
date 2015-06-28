@@ -5,3 +5,5 @@
 	name = Ilya Kolpakov
 [core]
 	excludesfile = /home/ilya/dotfiles/git/ignore
+[push]
+	default = matching

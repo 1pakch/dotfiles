@@ -1,2 +1,2 @@
-. ~/dotfiles/envvars.sh
-. ~/.bashrc
+. $HOME/dotfiles/envvars.sh
+. $HOME/.bashrc

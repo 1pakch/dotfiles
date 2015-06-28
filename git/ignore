@@ -17,6 +17,10 @@ build/*
 *.gch
 *.pyc
 
+# Profiling results
+*.prof
+*.lprof
+
 # gVim swap files #
 *.swp
 *.swo

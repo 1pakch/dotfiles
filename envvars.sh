@@ -7,4 +7,4 @@ done
 
 cd ~
 
-stty stop ^J
+stty stop undef

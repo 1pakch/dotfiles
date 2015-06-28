@@ -32,4 +32,4 @@ sudo aptitude install tmux
 
 pip install --user pss python-sql pss unipath
 pip install --user pandas scikit-learn statsmodels patsy
-
+pip install --user arrow

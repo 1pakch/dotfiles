@@ -30,19 +30,20 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#begin()
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
-Plugin 'Shougo/unite.vim'
-Plugin 'ivanov/vim-ipython'
+" Plugin 'Shougo/unite.vim'
+" Plugin 'ivanov/vim-ipython'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
-" Plugin 'suan/vim-instant-markdown'
 Plugin 'shime/vim-livedown'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'LnL7/vim-nix'
+Plugin 'johnsyweb/vim-makeshift'
 call vundle#end()
 
 " Enable vim-airline
@@ -82,25 +83,40 @@ else
 endif
 
 
-" Run scons from a parent directory which has SConstruct
-function g:Run_scons ()
-  let oldpwd = getcwd()
-  echo oldpwd
-  let sfile = findfile("SConstruct", ".;/home/elio")
-  let sroot = fnamemodify(sfile, ":p:h")
-  lcd `=sroot`
-  !scons
-  lcd `=oldpwd`
-endfunction
-
-" Define shortcut <F3> for compiling
-function g:Map_compile_scons ()
-  map <F3> :wall<CR>:call g:Run_scons()<CR>
-  imap <F3> <ESC>:wall<CR>:call g:Run_scons()<CR>
-endfunction
-
-autocmd BufRead *.tex call g:Map_compile_scons() 
-autocmd BufRead *.cpp call g:Map_compile_scons() 
+" Map <F5> and <F6> for building
+nnoremap <F5> :<C-U>MakeshiftBuild<CR>
+nnoremap <F6> :<C-U>MakeshiftBuild check<CR>
 
 " Syntastic with default settings for python is bery annoying
 let g:syntastic_python_checkers = ['python']
+
+" Word wrapping with corrected movement keys
+noremap <silent> <Leader>w :call ToggleWrap()<CR>
+function! ToggleWrap()
+  if &wrap
+    echo "Wrap OFF"
+    setlocal nowrap
+    set virtualedit=all
+    silent! nunmap <buffer> <Up>
+    silent! nunmap <buffer> <Down>
+    silent! nunmap <buffer> <Home>
+    silent! nunmap <buffer> <End>
+    silent! iunmap <buffer> <Up>
+    silent! iunmap <buffer> <Down>
+    silent! iunmap <buffer> <Home>
+    silent! iunmap <buffer> <End>
+  else
+    echo "Wrap ON"
+    setlocal wrap linebreak nolist
+    set virtualedit=
+    setlocal display+=lastline
+    noremap  <buffer> <silent> <Up>   gk
+    noremap  <buffer> <silent> <Down> gj
+    noremap  <buffer> <silent> <Home> g<Home>
+    noremap  <buffer> <silent> <End>  g<End>
+    inoremap <buffer> <silent> <Up>   <C-o>gk
+    inoremap <buffer> <silent> <Down> <C-o>gj
+    inoremap <buffer> <silent> <Home> <C-o>g<Home>
+    inoremap <buffer> <silent> <End>  <C-o>g<End>
+  endif
+endfunction

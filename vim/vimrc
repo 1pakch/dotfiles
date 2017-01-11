@@ -30,31 +30,35 @@ filetype off
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#begin()
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'Lokaltog/vim-easymotion'
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/unite.vim'
-Plugin 'ivanov/vim-ipython'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
-" Plugin 'suan/vim-instant-markdown'
 Plugin 'shime/vim-livedown'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'ilya-kolpakov/vim-snippets'
 call vundle#end()
 
 " Enable vim-airline
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
+" Customize the theme
+let g:airline_theme='solarized'
+
+" Enable C++11 support for syntastic
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 "autocmd FileType c set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 "autocmd FileType cpp set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 autocmd FileType tex set softtabstop=2 shiftwidth=2 textwidth=90 expandtab
 autocmd FileType python set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 autocmd FileType c set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
-autocmd FileType cpp set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
+autocmd FileType cpp set softtabstop=2 shiftwidth=2 textwidth=80 expandtab
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType markdown set softtabstop=4 shiftwidth=4 textwidth=80 expandtab
 
@@ -81,7 +85,6 @@ else
   let g:solarized_termcolors=16
 endif
 
-
 " Run scons from a parent directory which has SConstruct
 function g:Run_scons ()
   let oldpwd = getcwd()
@@ -104,3 +107,8 @@ autocmd BufRead *.cpp call g:Map_compile_scons()
 
 " Syntastic with default settings for python is bery annoying
 let g:syntastic_python_checkers = ['python']
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"

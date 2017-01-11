@@ -1,8 +1,11 @@
 Core R
 ------
 
-Install latest R from the CRAN repository
-http://stat.ethz.ch/CRAN/bin/linux/ubuntu/
+Install latest R from the CRAN repository. In Ubuntu run
+```
+echo "deb http://stat.ethz.ch/CRAN/bin/linux/ubuntu/ `lsb_release -c -s`"
+```
+and make sure this line is in `/etc/apt/sources.list`
 
 Packages
 --------
@@ -22,47 +25,32 @@ We need the following packages:
 
 ## Basic packages
 ```
-install.packages(c("zoo", "xts", "foreach", "ggplot2", "devtools", "rmarkdown"))
+install.packages(c("zoo", "xts"))
+install.packages(c("foreach", "ggplot2"))
+install.packages(c("knitr", "rmarkdown"))
+install.packages(c("devtools"))
+
+install.packages(c("FinancialInstrument", "TTR", "quantmod"))
+install.packages(c("blotter", "quantstrat", "xtsExtra"), repos="http://R-Forge.R-project.org")
+
+install.packages(c("RCurl")) # merge.list
+install.packages(c("RUnit"))
 ```
 
 ## Installation with Devtools
 
-Install `zoo`, `xts`, `foreach` Then install `devtools`. Then
+Once `devtools` are installed one can do
 ```
-devtools::install_github("joshuaulrich/TTR")
-devtools::install_github("joshuaulrich/quantmod")
-devtools::install_github("R-Finance/PortfolioAnalytics")
-pkgs = paste("pkg/", c("FinancialInstrument", "blotter", "quantstrat"), sep="")
-lapply(pkgs,
-    function (pkg) {devtools::install_github("rforge/blotter", subdir=pkg)}
-)
+devtools::install_github("hadley/lineprof")
 ```
 
 ## Manual Installation
 
-If they cannot be installed via `install.packages()` one can build from source.
+If a package is not available otherwise or a development version is
+required one install the packages.
 
 For instance, to install `quantmod` run the following in the shell
 ```
 git clone https://github.com/joshuaulrich/quantmod.git
 R CMD INSTALL quantmod
 ```
-
-For `TTR` fo the same
-
-The package `PerformanceAnalytics` is contained within `returnanalytics`
-```
-svn checkout svn://svn.r-forge.r-project.org/svnroot/returnanalytics
-cd returnanalytics/pkg/
-R CMD INSTALL PerformanceAnalytics
-```
-
-The package `blotter` is contained in the same-named repository
-```
-svn checkout svn://svn.r-forge.r-project.org/svnroot/blotter/
-cd blotter/pkg/
-R CMD INSTALL FinancialInstrument 
-R CMD INSTALL blotter 
-R CMD INSTALL quantstrat
-```
-

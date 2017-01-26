@@ -106,6 +106,8 @@ endfunction
 
 autocmd BufRead *.tex call g:Map_compile_scons() 
 autocmd BufRead *.cpp call g:Map_compile_scons() 
+map <F4> :wall<CR>:make<CR>
+imap <F4> <ESC>:wall<CR>:make<CR>
 
 " Syntastic with default settings for python is bery annoying
 let g:syntastic_python_checkers = ['python']

@@ -37,6 +37,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/unite.vim'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'shime/vim-livedown'
+" Markdown support
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " Snippets

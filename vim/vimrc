@@ -44,6 +44,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'SirVer/ultisnips'
 Plugin 'ilya-kolpakov/vim-snippets'
 Plugin 'ctrlpvim/ctrlp.vim'
+" nix language
+Plugin 'LnL7/vim-nix'
 call vundle#end()
 
 " Enable vim-airline

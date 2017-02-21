@@ -1,0 +1,4 @@
+source ~/dotfiles/bash/bashrc
+source ~/dotfiles/bash/viminit
+source ~/dotfiles/bash/texinputs
+source ~/dotfiles/bash/nix
